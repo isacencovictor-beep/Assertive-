@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+  <section class="hero">
+    <h1>Welcome<% if (currentUser) { %>, <%= currentUser.name %><% } %>!</h1>
+    <p>This is a simple site with registration and login.</p>
+    <% if (!currentUser) { %>
+      <p>
+        <a class="btn" href="/auth/register">Create an account</a>
+        <a class="btn outline" href="/auth/login">Sign in</a>
+      </p>
+    <% } else { %>
+      <p>
+        <a class="btn" href="/dashboard">Go to dashboard</a>
+      </p>
+    <% } %>
+  </section>
+<%- include('partials/footer') %>

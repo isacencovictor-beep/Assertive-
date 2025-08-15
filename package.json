@@ -1,0 +1,40 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Simple Express app with registration and login",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"No tests configured\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isacencovictor-beep/Assertive-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isacencovictor-beep/Assertive-/issues"
+  },
+  "homepage": "https://github.com/isacencovictor-beep/Assertive-#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-flash": "^0.1.1",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "lowdb": "^7.0.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.1",
+    "nanoid": "^5.1.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
