@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title><%= typeof title !== 'undefined' ? title : 'Auth Demo' %></title>
+	<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<h1><a href="/">Auth Demo</a></h1>
+			<nav>
+				<ul>
+					<% if (currentUser) { %>
+						<li><a href="/dashboard">Dashboard</a></li>
+						<li>
+							<form action="/logout" method="post" style="display:inline">
+								<button type="submit">Logout</button>
+							</form>
+						</li>
+					<% } else { %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Register</a></li>
+					<% } %>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="container">
+		<%- body %>
+	</main>
+	<footer class="site-footer">
+		<div class="container">&copy; <%= new Date().getFullYear() %> Auth Demo</div>
+	</footer>
+</body>
+</html>

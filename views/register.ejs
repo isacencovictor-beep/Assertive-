@@ -1,0 +1,19 @@
+<section class="auth">
+	<h2>Register</h2>
+	<% if (error) { %>
+		<div class="alert error"><%= error %></div>
+	<% } %>
+	<form action="/register" method="post" class="card">
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" required value="<%= values.email %>" />
+
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" required />
+
+		<label for="confirmPassword">Confirm Password</label>
+		<input type="password" id="confirmPassword" name="confirmPassword" required />
+
+		<button type="submit" class="btn">Create account</button>
+	</form>
+	<p>Already have an account? <a href="/login">Login</a>.</p>
+</section>

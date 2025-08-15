@@ -1,0 +1,12 @@
+<section>
+	<h2>Welcome</h2>
+	<p>This is a simple site with registration and login.</p>
+	<% if (!currentUser) { %>
+		<p>
+			<a class="btn" href="/register">Create an account</a>
+			<a class="btn secondary" href="/login">Login</a>
+		</p>
+	<% } else { %>
+		<p><a class="btn" href="/dashboard">Go to your dashboard</a></p>
+	<% } %>
+</section>
