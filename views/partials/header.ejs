@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> · Auth App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="/">AuthApp</a>
+        <ul class="nav-links">
+          <% if (currentUser) { %>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li>
+              <form action="/auth/logout" method="post">
+                <button class="link" type="submit">Logout</button>
+              </form>
+            </li>
+          <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <li><a href="/auth/register">Register</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <% if (flash && flash.success && flash.success.length) { %>
+        <div class="alert success">
+          <% flash.success.forEach(msg => { %>
+            <p><%= msg %></p>
+          <% }) %>
+        </div>
+      <% } %>
+      <% if (flash && flash.error && flash.error.length) { %>
+        <div class="alert error">
+          <% flash.error.forEach(msg => { %>
+            <p><%= msg %></p>
+          <% }) %>
+        </div>
+      <% } %>
